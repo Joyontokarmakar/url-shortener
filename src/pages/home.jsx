@@ -1,5 +1,35 @@
+import {useState} from "react";
+import {ADD_PATH, EDIT_PATH} from "../routes/Slug.jsx";
+import {Link} from "react-router-dom";
+import {UrlContainer} from "../component/UrlContainer.jsx";
+
 export const Home = () => {
+    const [urls, setUrls] = useState(() => {
+        const localValue = localStorage.getItem("urls");
+        if (localValue == null) {
+            return([]);
+        } else {
+            return(JSON.parse(localValue))
+        }
+    })
     return (
-        <div>Home</div>
+        <div>
+            <p className={'text-lg font-bold text-center mb-3 underline underline-offset-4'}>
+                { urls.length == 0 ? 'Your List is Empty' : 'Your URL List'}
+                <Link to={ADD_PATH} className={'bg-blue-700 text-white rounded-lg text-sm px-4 py-1 ml-2 '}>
+                    { urls.length == 0 ? 'Add Url' : 'Add More Url'}
+                </Link>
+            </p>
+
+            {urls.map((item, index) => (
+                <UrlContainer
+                    key={index}
+                    url={item.url}
+                    shortUrl={item.shortUrl}
+                    code={item.code}
+                    fullItem={item}
+                />
+            ))}
+        </div>
     )
 }
