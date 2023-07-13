@@ -28,7 +28,7 @@ export const Add = () => {
             const urlData = data.result;
             setUrls((currentUrls) => {
                 return [...currentUrls,
-                    { id: Math.floor(Math.random()*1000), url: inputUrl, shortUrl: urlData?.full_short_link, code: urlData.code },
+                    { id: Math.floor(Math.random()*1000), url: inputUrl, shortUrl: urlData?.full_short_link, name: urlData.code },
                 ];
             });
             setInputUrl("");

@@ -24,9 +24,10 @@ export const Home = () => {
             {urls.map((item, index) => (
                 <UrlContainer
                     key={index}
+                    id={item.id}
                     url={item.url}
                     shortUrl={item.shortUrl}
-                    code={item.code}
+                    name={item.name}
                     fullItem={item}
                 />
             ))}
