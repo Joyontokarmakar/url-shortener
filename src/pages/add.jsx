@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {UrlContainer} from "../component/UrlContainer.jsx";
 
 export const Add = () => {
     const [inputUrl, setInputUrl] = useState("");
@@ -11,27 +12,34 @@ export const Add = () => {
         }
     })
 
+    const [add, setAdd] = useState(false)
+    const [lastAddedUrl, setLastAddedUrl] = useState({})
+
     useEffect(() => {
         localStorage.setItem("urls", JSON.stringify(urls));
     }, [urls]);
 
     const shortenUrl = async (e) => {
-        if (inputUrl.trim() === "") {
-            return;
-        }
+        if (inputUrl.trim() === "") {return;}
         e.preventDefault();
         try {
-            const response = await fetch(
-                `https://api.shrtco.de/v2/shorten?url=${inputUrl}`
-            )
+            const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${inputUrl}`)
             const data = await response.json()
             const urlData = data.result;
+            const urlId = Math.floor(Math.random()*1000)
             setUrls((currentUrls) => {
                 return [...currentUrls,
-                    { id: Math.floor(Math.random()*1000), url: inputUrl, shortUrl: urlData?.full_short_link, name: urlData.code },
+                    { id: urlId, url: inputUrl, shortUrl: urlData?.full_short_link, name: urlData.code },
                 ];
             });
+
             setInputUrl("");
+            setAdd(true);
+            lastAddedUrl.id = urlId
+            lastAddedUrl.name = urlData.code
+            lastAddedUrl.url = inputUrl
+            lastAddedUrl.shortUrl = urlData?.full_short_link
+
         } catch (e) {
             alert(e);
         }
@@ -42,8 +50,8 @@ export const Add = () => {
     };
 
     return (
-        <div className={' flex justify-center'}>
-            <form onSubmit={shortenUrl} className={'border border-primaryColor w-10/12 md:w-1/2 flex justify-between'}>
+        <div>
+            <form onSubmit={shortenUrl} className={' w-10/12 md:w-1/2 mx-auto flex justify-between mb-3 border border-primaryColor'}>
                 <input
                     placeholder="Add a url..."
                     type="text"
@@ -55,6 +63,17 @@ export const Add = () => {
                     Add
                 </button>
             </form>
+            { add ?
+                <UrlContainer
+                    id={lastAddedUrl.id}
+                    url={lastAddedUrl.url}
+                    shortUrl={lastAddedUrl.shortUrl}
+                    name={lastAddedUrl.name}
+                    fullItem={lastAddedUrl}
+                />
+                :
+                <></>
+            }
         </div>
     )
 }

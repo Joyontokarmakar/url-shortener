@@ -26,7 +26,7 @@ export const Footer = () => {
                     <Link
                         to={'https://joyontokarmakar.netlify.app'}
                         target={'_blank'}
-                        className={'underline font-bold'}
+                        className={'font-bold text-dimLightColor'}
                     >
                         Joyonto Karmakar.
                     </Link>
