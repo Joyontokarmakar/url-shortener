@@ -47,8 +47,8 @@ export const Edit = () => {
             const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${inputUrl}`)
             const data = await response.json()
             const urlData = data.result;
-            url.name = urlData.code;
-            url.shortUrl = urlData.full_short_link;
+            url.name = urlData?.code;
+            url.shortUrl = urlData?.full_short_link;
             url.url = inputUrl
 
             allUrl.map((item)=> {

@@ -12,6 +12,9 @@ export const Add = () => {
         }
     })
 
+    const [message, setMessage] = useState('');
+    const [msgStatus, setMsgStatus] = useState(false);
+
     const [add, setAdd] = useState(false)
     const [lastAddedUrl, setLastAddedUrl] = useState({})
 
@@ -29,7 +32,7 @@ export const Add = () => {
             const urlId = Math.floor(Math.random()*1000)
             setUrls((currentUrls) => {
                 return [...currentUrls,
-                    { id: urlId, url: inputUrl, shortUrl: urlData?.full_short_link, name: urlData.code },
+                    { id: urlId, url: inputUrl, shortUrl: urlData.full_short_link, name: urlData.code },
                 ];
             });
 
@@ -41,7 +44,8 @@ export const Add = () => {
             lastAddedUrl.shortUrl = urlData?.full_short_link
 
         } catch (e) {
-            alert(e);
+            setMsgStatus(true)
+            setMessage('This url may have an issue');
         }
     };
 
@@ -74,6 +78,11 @@ export const Add = () => {
                 :
                 <></>
             }
+            { msgStatus ?
+                <p className={'text-center text-red-500 text-sm'}>{message}</p>
+                : <></>
+            }
+            <p></p>
         </div>
     )
 }
