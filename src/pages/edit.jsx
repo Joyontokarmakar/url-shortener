@@ -81,7 +81,7 @@ export const Edit = () => {
                 </div>
                 <p className={'text-sm md:text-md mb-2'}>
                     <span className={'text-darkColor font-bold'}>Short URL: </span>
-                    <Link className={'text-darkAshColor font-medium underline'} to={url.shortUrl} target={'_blank'}>{url.shortUrl}</Link>
+                    <Link className={'text-darkAshColor font-medium underline break-words'} to={url.shortUrl} target={'_blank'}>{url.shortUrl}</Link>
                 </p>
                 <div className={'flex justify-center gap-x-4'}>
                     <button type={'submit'} className={'bg-primaryColor text-white rounded text-sm px-4 py-2'}>

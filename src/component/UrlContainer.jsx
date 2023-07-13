@@ -12,7 +12,7 @@ export const UrlContainer = (prop) => {
                     <p className={'text-sm md:text-md mb-2'}><span className={'text-darkColor font-bold'}>Short Name of your URL: </span> {name}</p>
                     <p className={'text-sm md:text-md mb-2'}>
                         <span className={'text-darkColor font-bold'}>Long URL: </span>
-                        <Link className={'text-darkAshColor font-medium underline'} to={url} target={'_blank'}>{url}</Link>
+                        <Link className={'text-darkAshColor font-medium underline break-words'} to={url} target={'_blank'}>{url}</Link>
                     </p>
                     <p className={'text-sm md:text-md mb-2'}>
                         <span className={'text-darkColor font-bold'}>Short URL: </span>
