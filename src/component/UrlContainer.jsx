@@ -7,7 +7,7 @@ export const UrlContainer = (prop) => {
 
     return (
         <div>
-             <div className={'border border-primaryAshColor bg-dimLightColor mb-2 flex justify-between items-center p-2'}>
+             <div className={'border border-primaryAshColor bg-dimLightColor mb-2 flex justify-between gap-x-2 items-center p-2'}>
                 <div className={'w-4/5'}>
                     <p className={'text-sm md:text-md mb-2'}><span className={'text-darkColor font-bold'}>Short Name of your URL: </span> {name}</p>
                     <p className={'text-sm md:text-md mb-2'}>
