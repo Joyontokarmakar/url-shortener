@@ -5,13 +5,30 @@ export const Footer = () => {
         return new Date().getFullYear()
     }
     return (
-        <div className={'bg-gray-300 border-t border-gray-200'}>
-            <p className={' text-center text-sm '}>
-                API: by <Link to={'https://shrtco.de/docs'} target={'_blank'}>Shortcode</Link>
+        <div className={'bg-primaryAshColor border-t border-gray-200'}>
+            <p className={' text-center text-sm py-1'}>
+                <span>API: </span>
+                <span>
+                    <Link
+                        to={'https://shrtco.de/docs'}
+                        target={'_blank'}
+                        className={'font-bold'}
+                    >
+                        Shortcode
+                    </Link>
+                </span>
             </p>
-            <div className={'bg-blue-200'}>
-                <p className={'text-center text-sm font-bold'}>
-                    &copy; {getFullYear()} <Link to={'https://joyontokarmakar.netlify.app'}>Joyonto Karmakar</Link>. All rights reserved.
+            <div className={'bg-ashColor py-1'}>
+                <p className={'text-center text-sm font-bold text-primaryLightColor'}>
+                    <span>&copy; {getFullYear()} </span>
+                    <Link
+                        to={'https://joyontokarmakar.netlify.app'}
+                        target={'_blank'}
+                        className={'underline'}
+                    >
+                        Joyonto Karmakar.
+                    </Link>
+                    <span> All rights reserved.</span>
                 </p>
             </div>
         </div>

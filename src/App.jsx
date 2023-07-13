@@ -10,13 +10,13 @@ function App() {
   return (
     <div>
         <BrowserRouter>
-            <div className={'flex justify-center bg-gray-100 py-10'}>
-                <div className={'border border-gray-300 w-full md:w-2/3'}>
-                    <div className={'bg-blue-700 h-[200px] flex justify-center items-center'}>
-                        <h2 className={'text-lg lg:text-2xl xl:text-5xl font-bold text-white'}>URL SHORTENER</h2>
+            <div className={'flex justify-center bg-dimLightColor py-10'}>
+                <div className={'border border-ashColor w-full md:w-2/3'}>
+                    <div className={'bg-primaryColor h-[200px] flex justify-center items-center'}>
+                        <h2 className={'text-lg lg:text-2xl xl:text-5xl font-bold text-lightColor'}>URL SHORTENER</h2>
                     </div>
                     <Header/>
-                    <div className={'bg-white p-4'}>
+                    <div className={'bg-lightColor p-4'}>
                         <Routes>
                             <Route path={ROOT_PATH} element={<Home/>} />
                             <Route path={ADD_PATH} element={<Add/>} />

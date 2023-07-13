@@ -43,15 +43,15 @@ export const Add = () => {
 
     return (
         <div className={' flex justify-center'}>
-            <form onSubmit={shortenUrl} className={'border border-blue-500 w-10/12 md:w-1/2 flex justify-between'}>
+            <form onSubmit={shortenUrl} className={'border border-primaryColor w-10/12 md:w-1/2 flex justify-between'}>
                 <input
                     placeholder="Add a url..."
                     type="text"
                     value={inputUrl}
-                    className={'h-8 w-4/5 border border-blue-30 focus:outline-none px-2'}
+                    className={'h-8 w-4/5 focus:outline-none px-2'}
                     onChange={handleInputChange}
                 />
-                <button type={"submit"} className={'w-1/5 bg-blue-700 text-white text-sm px-4'}>
+                <button type={"submit"} className={'w-1/5 bg-primaryColor text-white text-sm px-4'}>
                     Add
                 </button>
             </form>
