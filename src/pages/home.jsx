@@ -14,7 +14,7 @@ export const Home = () => {
     })
     return (
         <div>
-            <p className={'text-lg font-bold text-center mb-3 underline underline-offset-4'}>
+            <p className={'text-lg font-bold text-center mb-3'}>
                 { urls.length == 0 ? 'Your List is Empty' : 'Your URL List'}
                 <Link to={ADD_PATH} className={'bg-primaryColor text-lightColor rounded-lg text-sm px-4 py-1 ml-2 '}>
                     { urls.length == 0 ? 'Add Url' : 'Add More Url'}

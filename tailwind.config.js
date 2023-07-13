@@ -10,11 +10,11 @@ export default {
         primaryColor: '#164e63',
         primaryLightColor: '#0d9488',
         primaryAshColor: '#e4e4e7',
-        dimLightColor: '#cffafe',
+        darkAshColor: '#0f172a',
         lightColor: '#ecfeff',
-        dimDarkColor: '#083344',
+        dimLightColor: '#cffafe',
         darkColor: '#030712',
-        ashColor: '#0f172a'
+        dimDarkColor: '#083344'
       }
     },
   },

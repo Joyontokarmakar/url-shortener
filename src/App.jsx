@@ -11,9 +11,9 @@ function App() {
     <div>
         <BrowserRouter>
             <div className={'flex justify-center bg-dimLightColor py-10'}>
-                <div className={'border border-ashColor w-full md:w-2/3'}>
+                <div className={'border border-darkAshColor w-full md:w-2/3'}>
                     <div className={'bg-primaryColor h-[200px] flex justify-center items-center'}>
-                        <h2 className={'text-lg lg:text-2xl xl:text-5xl font-bold text-lightColor'}>URL SHORTENER</h2>
+                        <h2 className={'text-lg lg:text-2xl xl:text-5xl font-bold text-lightColor uppercase'}>url shortener</h2>
                     </div>
                     <Header/>
                     <div className={'bg-lightColor p-4'}>

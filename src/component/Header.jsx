@@ -4,7 +4,7 @@ import {ADD_PATH, ROOT_PATH} from "../routes/Slug.jsx";
 export const Header = () => {
     let location = useLocation();
     return (
-        <div className={'bg-ashColor flex justify-center'}>
+        <div className={'bg-darkAshColor flex justify-center'}>
             <Link
                 to={ROOT_PATH}
                 className={'text-md my-2 p-2 ' + (location.pathname === ROOT_PATH ? 'text-primaryLightColor underline font-bold' : ' text-dimLightColor')}

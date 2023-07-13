@@ -18,7 +18,7 @@ export const Footer = () => {
                     </Link>
                 </span>
             </p>
-            <div className={'bg-ashColor py-1'}>
+            <div className={'bg-darkAshColor py-1'}>
                 <p className={'text-center text-sm font-bold text-primaryLightColor'}>
                     <span>&copy; {getFullYear()} </span>
                     <Link
